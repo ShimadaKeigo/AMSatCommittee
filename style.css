@@ -1,0 +1,34 @@
+
+h2 {
+      color: blue;
+      width: 100%;
+      padding: 30px;
+      margin: 30px;
+      background-color: #ffee00;
+    }
+
+    body {
+    background-color: #f2f2f2;
+  }
+  .test {
+  display: flex;
+  background-color: #ff0021;
+}
+
+.qrcode-text {padding-right:1.7em; margin-right:0}
+
+.qrcode-text-btn {
+    display: inline-block;
+    height: 1em;
+    width: 1em;
+    background: url(//dab1nmslvvntp.cloudfront.net/wp-content/uploads/2017/07/1499401426qr_icon.svg) 50% 50% no-repeat;
+    cursor: pointer;
+  }
+  
+  .qrcode-text-btn > input[type=file] {
+    position: absolute;
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+  }
