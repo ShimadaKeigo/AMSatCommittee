@@ -1,54 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.2, maximum-scale=4,user-scalable=yes">
     <title>勤怠管理システム</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+
+    <!-- jsQR.jsの読み込み -->
+    <script src="jsQR.js"></script>
+    <script src="scanqr.js"></script>
   </head>
   <body>
     <div class="test">
-        <h2>勤怠管理システム！！</h2>
+        <h2>勤怠管理システム！！for MTM</h2>
     </div>
 
     <input type=file
        accept="image/*"
        capture=environment>
-
        <input type=text size=16 placeholder="Tracking Code" class=qrcode-text>
-
-    <input type=text class=qrcode-text
-><label class=qrcode-text-btn>
-   <input type=file
-         accept="image/*"
-         capture=environment
-         tabindex=-1>
-         <input type=button value="Go" disabled>
-</label>
-<div id="d2">&nbsp;</div>
-<script src="nowtime.js"></script> <!--外部ファイルからの読み込み成功した-->
-<script src="app.js"></script>
-
-
+    <input type=text class=qrcode-text>
+      <label class=qrcode-text-btn>
+        <input type=file
+          accept="image/*"
+          capture=environment
+          tabindex=-1>
+          <input type=button value="Go" disabled>
+      </label>
+    <div id="d2">&nbsp;</div>
+    <script src="nowtime.js"></script> <!--外部ファイルからの読み込み成功した-->
+    <script src="app.js"></script>
     <div>
       <video id="video"></video>
     </div>
-  <script>
-    const video = document.getElementById('video');
-    navigator.mediaDevices
-      .getUserMedia({
-        video: true,
-        audio: false,
-      })
-      .then((stream) => {
-        video.srcObject = stream;
-        video.play();
-      })
-      .catch((e) => {
-        console.log(e);
-      });
-  </script>
-
-
+    <p>ピントを合わせて、QRコードをカメラ映像の赤枠内にあわせると読み取ります</p>
+    <div><canvas id="preview"></canvas></div>
+    <textarea id="qr" rows="8" cols="40"></textarea>
   </body>
 </html>
